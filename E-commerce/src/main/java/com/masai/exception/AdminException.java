@@ -3,7 +3,7 @@ package com.masai.exception;
 public class AdminException extends RuntimeException {
 	
 	public AdminException() {
-		// TODO Auto-generated constructor stub
+		//Ritesh Loves Shweta
 	}
 	
 	public AdminException(String msg) {
