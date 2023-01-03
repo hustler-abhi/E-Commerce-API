@@ -15,7 +15,7 @@ import com.masai.entity.Customer;
 import com.masai.service.CustomerLoginService;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/userlog")
 public class CustomerLogin {
 	
 	@Autowired

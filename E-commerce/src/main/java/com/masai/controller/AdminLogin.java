@@ -16,7 +16,7 @@ import com.masai.service.AdminLoginService;
  
 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/adminlog")
 public class AdminLogin {
 	
 	@Autowired
