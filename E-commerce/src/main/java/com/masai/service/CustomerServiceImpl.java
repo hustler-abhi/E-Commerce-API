@@ -6,9 +6,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.masai.dao.CartDao;
 import com.masai.dao.CustomerDao;
 import com.masai.dao.CustomerSessionDao;
 import com.masai.entity.Address;
+import com.masai.entity.Cart;
 import com.masai.entity.CurrentUserSession;
 import com.masai.entity.Customer;
 import com.masai.entity.Order;
@@ -22,6 +24,9 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	private CustomerSessionDao csd;
+	
+	@Autowired
+	private CartDao cart;
 
 	@Override
 	public Customer registerCustomer(Customer customer) throws CustomerException {
@@ -29,6 +34,10 @@ public class CustomerServiceImpl implements CustomerService {
 		if (customer == null) {
 			throw new CustomerException("customer not found");
 		}
+		Cart c=new Cart();
+		customer.setCart(c);
+		c.setCustomer(customer);
+		cart.save(c);
 		cdao.save(customer);
 		return customer;
 	}
