@@ -1,5 +1,5 @@
 # E-Commerce-API
-<p align="center"><img  width="25%" src="https://raw.githubusercontent.com/ritesh19331/berserk-cloth-744/main/fastrack-bus-service-logo.png" alt="FastTrack Logo" /></p>
+<p align="center"><img  width="25%" src="https://github.com/hustler-abhi/E-Commerce-API/blob/main/E-commerce/e-commerec-logo.png" alt="FastTrack Logo" /></p>
 
 ## Provide REST API For  E-commerce Website
  * A web application developed using spring boot framework, focusing on exploring the features of Spring Boot as a Software development framework. 
@@ -11,8 +11,8 @@
 * MySQL RDBMS
 
 ## Modules
-| Module | Contributor |
-| --- | --- |
+| Module | 
+| --- |
 | [Admin][1] and [User Module][2]  
 | [Product Module][3] and [Category Module][6]  
 | [Order Module][5] |  
