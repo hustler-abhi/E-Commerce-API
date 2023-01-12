@@ -22,7 +22,7 @@ This application will help Admin to search Product list ,add new products ,remov
 
  
 
-## EER Diagram
+## ER Diagram
 (https://github.com/hustler-abhi/E-Commerce-API/blob/main/E-commerce/e-commerce-diagram.mwb)
 
 
