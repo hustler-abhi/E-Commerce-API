@@ -23,7 +23,7 @@ This application will help Admin to search Product list ,add new products ,remov
  
 
 ## ER Diagram
-(https://github.com/hustler-abhi/E-Commerce-API/blob/main/E-commerce/e-commerce-diagram.mwb)
+(https://github.com/hustler-abhi/E-Commerce-API/blob/main/E-commerce/e-diagram.png)
 
 
 ## Swagger-UI
