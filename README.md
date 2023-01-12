@@ -2,8 +2,10 @@
 <p align="center"><img  width="25%" src="https://github.com/hustler-abhi/E-Commerce-API/blob/main/E-commerce/e-commerec-logo.png" alt="FastTrack Logo" /></p>
 
 ## Provide REST API For  E-commerce Website
- * A web application developed using spring boot framework, focusing on exploring the features of Spring Boot as a Software development framework. 
-  * It is also to showcase the knowledge acquired not restricted to performing CRUD operations but to provide the client with the proper response to the requests, irrespective of their nature. 
+ E-commerce  is an  application which is used by admin and their Customer for online shopping 
+This application will help Customer to buy the products and view order details.
+Customer can register themselves and login. Add product to the cart and purchase it .
+This application will help Admin to search Product list ,add new products ,remove products and update products.
  ## Tech Stack
 
 * Java
@@ -21,7 +23,7 @@
  
 
 ## EER Diagram
-<img align ="center" width="100%" src="https://github.com/hustler-abhi/E-Commerce-API/blob/main/E-commerce/e-commerce-diagram.mwb" />
+(https://github.com/hustler-abhi/E-Commerce-API/blob/main/E-commerce/e-commerce-diagram.mwb)
 
 
 ## Swagger-UI
