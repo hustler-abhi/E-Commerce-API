@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.stereotype.Service;
 
 import com.masai.dao.AdminSessionDao;
@@ -56,8 +60,14 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<Product> allProduct() throws ProductException {
 		// TODO Auto-generated method stub
-	List<Product>list=pdao.findAll();
-	if(list.size()==0) {
+		
+	     PageRequest page=PageRequest.of(4, 5);
+	
+	     List<Product>list= pdao.findAll(page).getContent();
+	    
+	   
+	    
+	   if(list.size()==0) {
 		throw new ProductException("no product AValibale now");
 	}
 		return list;
