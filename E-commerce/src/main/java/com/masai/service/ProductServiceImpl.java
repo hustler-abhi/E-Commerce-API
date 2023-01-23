@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.masai.dao.AdminSessionDao;
 import com.masai.dao.CategoryDao;
 import com.masai.dao.ProductRepo;
+import com.masai.dto.ProductPageDTO;
 import com.masai.entity.Category;
 import com.masai.entity.CurrentAdminSession;
 import com.masai.entity.Product;
@@ -61,9 +62,9 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> allProduct() throws ProductException {
 		// TODO Auto-generated method stub
 		
-	     PageRequest page=PageRequest.of(4, 5);
+	      
 	
-	     List<Product>list= pdao.findAll(page).getContent();
+	     List<Product>list= pdao.findAll();
 	    
 	   
 	    
@@ -136,17 +137,7 @@ public class ProductServiceImpl implements ProductService {
 		return list;
 	}
 
-	@Override
-	public List<Product> productByNameLike(String name) throws ProductException {
-		// TODO Auto-generated method stub
-		  List<Product>list=pdao.productByNameLike(name);
-		
-		if(list.size()==0) {
-			throw new ProductException("no product found with this name..");
-		}
-			return list;
-		 
-	}
+	 
 
 	@Override
 	public List<Product> top5() throws ProductException {
@@ -158,5 +149,39 @@ public class ProductServiceImpl implements ProductService {
 		}
 			return list;
 	}
+
+	@Override
+	public ProductPageDTO allProductWithPaging(int pageNumber, int pagesize) throws ProductException {
+		// TODO Auto-generated method stub
+		
+		org.springframework.data.domain.Pageable p= PageRequest.of(pageNumber, pagesize);
+		
+	Page<Product> page=pdao.findAll(p);
+	
+	List<Product>product=page.getContent();
+	
+	
+	if(product.size()==0) {
+		throw new ProductException("No product found");
+	}
+	
+	ProductPageDTO pdto=new ProductPageDTO(product, page.getNumber(),page.getSize(),page.getNumberOfElements(),page.getTotalPages(),page.isLast());
+		
+		
+		return pdto;
+	}
+
+	@Override
+	public List<Product> productByNameLike(String name) throws ProductException {
+		// TODO Auto-generated method stub
+	List<Product> list=pdao.findByProductNameContaining(name);
+	
+	if(list.size()==0) {
+		throw new ProductException("Product not found wiyh this search...");
+	}
+		return list;
+	}
+
+	 
 
 }

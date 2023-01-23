@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.masai.dto.ProductPageDTO;
 import com.masai.entity.Product;
 import com.masai.exception.CategoryException;
 import com.masai.exception.ProductException;
@@ -67,6 +69,12 @@ public class ProductController {
 	public ResponseEntity<List<Product>> top5() throws ProductException {
 		List<Product>list=ps.top5();
 		return new ResponseEntity<List<Product>>(list,HttpStatus.ACCEPTED);
+	}
+	
+	@GetMapping("/page")
+	 public ResponseEntity<ProductPageDTO> allProductWithPaging(@RequestParam(value = "pageNumber",defaultValue = "0",required = false)  int pageNumber,@RequestParam(value = "pagesize",defaultValue = "5",required = false) int pagesize) throws ProductException {
+		 
+		return new ResponseEntity<ProductPageDTO>(ps.allProductWithPaging(pagesize, pagesize),HttpStatus.ACCEPTED);
 	}
 	
 
